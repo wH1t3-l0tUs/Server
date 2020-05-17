@@ -8,10 +8,10 @@ io.on("connection", function (socket) {
   console.log("Someone connected" + socket.id);
   socket.on("user-joined", (data) => {
     console.log(data + " joined");
-    io.sockets.emit("server-noti-user-joined", data);
+    io.emit("server-noti-user-joined", data);
   });
   socket.on("user-send-message", (data) => {
     console.log("da nhan tin nhan ", data);
-    io.sockets.emit("server-send-message", data);
+    io.emit("server-send-message", data);
   });
 });
